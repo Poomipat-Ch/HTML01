@@ -4,3 +4,22 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: black;
+}
+
+h1{
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    line-height: 100vh;
+}
+
+span{
+    transition: all 0.5s ease;
+}
+
+span.fade{
+    color: rgb(52, 9, 207);
+}
