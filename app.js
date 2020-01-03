@@ -11,7 +11,7 @@ for (let index = 0; index < res.length; index++) {
 let char = 0;
 let timer = setInterval(onTick, 100)
 
-function onTick(){
+function onTick() {
     const span = x.querySelectorAll('span')[char]
     span.classList.add('fade')
     char++
@@ -21,8 +21,7 @@ function onTick(){
     }
 }
 
-function complete()
-{
+function complete() {
     clearInterval(timer);
-    timer = null;
+    timer = null
 }
