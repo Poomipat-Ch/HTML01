@@ -9,6 +9,7 @@ for (let index = 0; index < res.length; index++) {
 
 
 let char = 0;
+let char2 = 0;
 let timer = setInterval(onTick, 100)
 
 function onTick() {
@@ -16,6 +17,17 @@ function onTick() {
     span.classList.add('fade')
     char++
     if (char === res.length) {
+        timer = setInterval(color, 100)
+        return;
+    }
+}
+
+
+function color() {
+    const span = x.querySelectorAll('span')[char2]
+    span.classList.add('color')
+    char2++
+    if (char2 === res.length) {
         complete();
         return;
     }
