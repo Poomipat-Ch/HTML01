@@ -1,39 +1,39 @@
-const x = document.querySelector(".test")
-const y = x.textContent
-const res = y.split("")
-x.textContent = "";
+const section = document.querySelectorAll("section");
+const bubble = document.querySelector(".bubble");
+const gradients = [
+  "linear-gradient(to right top, #f46b45, #eea849)",
+  "linear-gradient(to right top, #005c97, #363795)",
+  "linear-gradient(to right top, #e53935, #e35d5b)"
+];
 
-for (let index = 0; index < res.length; index++) {
-    x.innerHTML += "<span>" + res[index] + "</span>"
-}
+const options = {
+  threshold: 0.7
+};
 
+let observer = new IntersectionObserver(navCheck, options);
 
-let char = 0;
-let char2 = 0;
-let timer = setInterval(onTick, 100)
-
-function onTick() {
-    const span = x.querySelectorAll('span')[char]
-    span.classList.add('fade')
-    char++
-    if (char === res.length) {
-        timer = setInterval(color, 100)
-        return;
+function navCheck(entries) {
+  entries.forEach(entry => {
+    const className = entry.target.className;
+    const activeAnchor = document.querySelector(`[data-page=${className}]`);
+    const gradientIndex = entry.target.getAttribute("data-index");
+    const coords = activeAnchor.getBoundingClientRect();
+    const directions = {
+      height: coords.height,
+      width: coords.width,
+      top: coords.top,
+      left: coords.left
+    };
+    if (entry.isIntersecting) {
+      bubble.style.setProperty("left", `${directions.left}px`);
+      bubble.style.setProperty("top", `${directions.top}px`);
+      bubble.style.setProperty("width", `${directions.width}px`);
+      bubble.style.setProperty("height", `${directions.height}px`);
+      bubble.style.background = gradients[gradientIndex];
     }
+  });
 }
 
-
-function color() {
-    const span = x.querySelectorAll('span')[char2]
-    span.classList.add('color')
-    char2++
-    if (char2 === res.length) {
-        complete();
-        return;
-    }
-}
-
-function complete() {
-    clearInterval(timer);
-    timer = null
-}
+section.forEach(section => {
+  observer.observe(section);
+});
