@@ -2,10 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: sans-serif;
+    margin: 0;
 }
 
 header {
@@ -13,6 +15,11 @@ header {
     position: sticky;
     top: 0px;
     background: white;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    flex: 1;
 }
 
 nav {
@@ -24,10 +31,10 @@ nav {
     justify-content: space-between;
 }
 
-nav h1,
 nav ul {
     font-size: 1.5rem;
     flex: 1;
+    transition: all 0.5s ease;
 }
 
 nav ul {
@@ -41,6 +48,7 @@ nav a {
     text-decoration: none;
     transition: all 0.5s ease;
 }
+
 
 section {
     min-height: 100vh;
@@ -75,4 +83,27 @@ section h2 {
     background: linear-gradient(to right top, #f46b45, #eea849);
     transform: scale(2);
     transition: all 0.7s ease;
+}
+
+@media only screen and (max-width : 768px) {
+
+    nav {
+        min-height: 10vh;
+        margin: auto;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav h1 {
+        font-size: 1.5rem;
+        flex: 1;
+    }
+
+    nav ul {
+        font-size: 1.0rem;
+        flex: 1;
+        transition: all 0.5s ease;
+    }
 }

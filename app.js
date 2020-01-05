@@ -31,7 +31,7 @@ function navCheck(entries) {
             bubble.style.setProperty("height", `${directions.height}px`);
             bubble.style.background = gradients[gradientIndex];
             activeAnchor.style.setProperty("color", "white");
-        } else activeAnchor.style.setProperty("color", "black");
+        } else activeAnchor.style.setProperty("color", "rgb(172, 172, 172)");
     });
 }
 
