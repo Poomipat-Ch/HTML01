@@ -15,6 +15,7 @@ let observer = new IntersectionObserver(navCheck, options);
 function navCheck(entries) {
     entries.forEach(entry => {
         const className = entry.target.className;
+        const FontSize = document.querySelector(`.${className}`)
         const activeAnchor = document.querySelector(`[data-page=${className}]`);
         const gradientIndex = entry.target.getAttribute("data-index");
         const coords = activeAnchor.getBoundingClientRect();
@@ -31,7 +32,9 @@ function navCheck(entries) {
             bubble.style.setProperty("height", `${directions.height}px`);
             bubble.style.background = gradients[gradientIndex];
             activeAnchor.style.setProperty("color", "white");
-        } else activeAnchor.style.setProperty("color", "rgb(172, 172, 172)");
+        } else {
+            activeAnchor.style.setProperty("color", "rgb(172, 172, 172)")
+        }
     });
 }
 

@@ -57,11 +57,11 @@ section {
     align-items: center;
 }
 
-section h2 {
+.title h2 {
     font-size: 5rem;
     color: white;
+    transition: all 0.5s ease;
 }
-
 
 
 .home {
@@ -106,4 +106,15 @@ section h2 {
         flex: 1;
         transition: all 0.5s ease;
     }
+
+    .title h2 {
+        font-size: 3rem;
+    }
+
+    section {
+        min-height: 100vh;
+        display: flex;
+
+    }
+
 }
