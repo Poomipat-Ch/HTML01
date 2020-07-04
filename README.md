@@ -2,4 +2,4 @@
 
 * [x] make some link
 * [x] make some animation
-* [] make some DB
+* [ ] make some DB
