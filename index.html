@@ -25,13 +25,13 @@
       <section data-index="0" class="home" id="home">
         <h2>Home</h2>
         <button
-          onClick={() => {
+          onClick="{() => {
             const login = window.open(
               "http://localhost:8400/auth/google/login?redirect=http://localhost:3000",
               "_blank",
               "width=500, height=600"
             );
-          }}
+          }}"
         >
           Login Google
         </button>
